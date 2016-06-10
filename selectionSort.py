@@ -23,13 +23,20 @@ def selectionSort(unsorted):
 
     for i in range(0, len(unsorted)):
         min = i
+        max = i
         for j in range(i+1, len(unsorted)):
             if unsorted[j] < unsorted[min]:
                 min = j
+            if unsorted[j] > unsorted[max]:
+                max = j
+
+        # temp  = unsorted[i]
+        # unsorted[i] = unsorted[min]
+        # unsorted[min] = temp
 
         temp  = unsorted[i]
-        unsorted[i] = unsorted[min]
-        unsorted[min] = temp
+        unsorted[i] = unsorted[max]
+        unsorted[max] = temp
             
 
 
